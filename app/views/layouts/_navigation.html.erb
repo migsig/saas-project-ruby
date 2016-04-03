@@ -1,36 +1,42 @@
 <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <%= link_to root_path, class: " audiowave navbar-brand navbar-link" do %>
+                <%= link_to root_path, class: "audiowide navbar-brand navbar-link" do %>
                 <%= image_tag 'logo.png' %>  MiGSiG Inc.  <% end %>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span><i class="fa fa-navicon"></i> </button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
 
-                <% if current_user %>
 
-                <li class="col-md-8 user-name">
+<% if current_user %>
 
-                <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile' %>
+<li class="col-md-8 user-name">
 
-                </li>
+<%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile' %>
 
-                <li class="col-md-1"> </li>
+</li>
 
-                <li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+<li class="col-md-1"> </li>
 
-                <% else %>
+<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
 
-                <li class="col-md-4 pull-right">
+<% else %>
 
-                <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary btn-lg', title: 'Sign In') %>
+<li class="col-md-12 pull-right" stlye="display:inline-box;">
+    <p> <%= link_to('Sign Up', new_user_registration_path, class: 'btn btn-primary', title: 'Sign Up') %>&nbsp;<%= link_to('Sign In', new_user_session_path, class: 'btn btn-success', title: 'Sign In') %>
+    </p>
+    
+    
 
-                </li>
 
-                <% end %>
 
-                </ul>
+</li>
+
+<% end %>
+
+</ul>
             </div>
         </div>
     </nav>
+

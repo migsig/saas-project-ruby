@@ -53,8 +53,10 @@ body {
     }
 }
   
-.audiowave{
-  font-family: 'Audiowide'!important, sans-serif;
+.audiowide{
+  font-family: "Audiowide"!important;
+    font-size-adjust: auto;
+    animation-fill-mode: both;
 }
 .jumbotron{
  padding-top:20px !important;
