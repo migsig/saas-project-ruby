@@ -10,6 +10,10 @@
         margin-top: -9px;
 
 }
+.navbar-brand{
+    color: #ccc !important;color: rgba(100, 131, 132, 0.45) !important;
+    padding: 20px 15px;
+}
 
 
 .hero{
@@ -37,11 +41,20 @@
     text-align:center;
   }
 }
-
-.hero .get-it h1, .hero .get-it p{
+.hero .get-it h1{
+color: #FFF;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+}
+ .hero .get-it p{
   color:#fff;
   text-shadow:2px 2px 3px rgba(0,0,0,0.3);
   margin-bottom:40px;
+    
 }
 
 .hero .get-it .btn{
@@ -99,12 +112,22 @@ div.iphone-mockup{
 
 section.features{
   background-color:#369;
-  padding:40px 0;
+  padding:30px;
   color:#fff;
 }
 
 .features h2{
   color:#fff;
+  letter-spacing: 5px;
+  font-weight:300;
+  text-transform: uppercase;
+}
+
+.features p{
+  color:#fff;
+  font-weight:200;
+  letter-spacing:2px;
+  font-size:14px;    
 }
 
 .features .icon-features{
@@ -132,12 +155,15 @@ section.testimonials{
 
 .site-footer h5{
   color:inherit;
-  font-size:20px;
+  font-size:12px;
+  font-weight:100;
+    font-family: "Audiowide";
+    color:#CCC;
 }
 
 .site-footer .social-icons a:hover{
   opacity:1;
-}
+} 
 
 .site-footer .social-icons a{
   display:inline-block;
@@ -152,6 +178,7 @@ section.testimonials{
   height:32px;
   opacity:0.8;
   line-height:32px;
+ 
 }
 
 @media (min-width:768px) {

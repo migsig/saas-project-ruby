@@ -55,8 +55,8 @@ body {
   
 .audiowide{
   font-family: "Audiowide"!important;
-    font-size-adjust: auto;
-    animation-fill-mode: both;
+    font-size: 1.5em;
+    animation-timing-function: ease-in;
 }
 .jumbotron{
  padding-top:20px !important;
