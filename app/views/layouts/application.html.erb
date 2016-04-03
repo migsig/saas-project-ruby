@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "SaasProjectApp" %></title>
     <%= csrf_meta_tags %>
+     
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "application",'https://fonts.googleapis.com/css?family=Audiowide', :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -38,48 +39,30 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">SaasProjectApp</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
+     <%= render 'layouts/navigation' %>
+<div class="jumbotron hero">
+        <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <%= bootstrap_flash %>
+        
+   
+<%= yield %> <!--DON"T DELETE-->
+        </div>
+          </div> 
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
+<footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5>migSig Inc. © 2016</h5></div>
+                <div class="col-sm-6 social-icons"><a href="https://facebook.com/migsiginc"><span class="fa fa-facebook"></span></a><a href="https://twitter.com/migsig"><span class="fa fa-twitter"></span></a><a href="https://instagram.com/migsig"><span class="fa fa-instagram"></span></a></div>
+            </div>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
+        <div></div>
+    </footer>
+</body>
+</html>
 
-      <footer>
-        <p>&copy; Company 2016</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-  </body>
 </html>

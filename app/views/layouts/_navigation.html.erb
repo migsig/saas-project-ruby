@@ -1,16 +1,35 @@
 <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <%= link_to root_path, class: "navbar-brand navbar-link" do %>
-                <%= image_tag 'logo.svg' %>  MiGSiG Inc.  <% end %>
+                <%= link_to root_path, class: " audiowave navbar-brand navbar-link" do %>
+                <%= image_tag 'logo.png' %>  MiGSiG Inc.  <% end %>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span><i class="fa fa-navicon"></i> </button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
-                    
-                    <li role="presentation"></li>
-                    </li>
-                <li role="presentation"><%= link_to "Home", home_index_path %></li>
+
+                <% if current_user %>
+
+                <li class="col-md-8 user-name">
+
+                <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile' %>
+
+                </li>
+
+                <li class="col-md-1"> </li>
+
+                <li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+
+                <% else %>
+
+                <li class="col-md-4 pull-right">
+
+                <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary btn-lg', title: 'Sign In') %>
+
+                </li>
+
+                <% end %>
+
                 </ul>
             </div>
         </div>
