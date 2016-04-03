@@ -5,6 +5,7 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
+
 table{width:100%;margin-bottom: 20px;}
 
 html{ background: #588DDE; /* For browsers that do not support gradients */
@@ -77,7 +78,7 @@ div.imac-mockup{
   left:4%;
   background-color:#aaa;
   overflow: hidden;
-  background: asset-url('imagescity_bg.png');
+  background-image: image-url('city_bg.png');
   background-size: cover;
   background-position: center;
 }
@@ -121,7 +122,7 @@ div.imac-mockup{
 }
 
 .hero{
-  background-image: asset-url('city_bg.png');
+  background-image: image-url('city_bg.png');
   background-size:cover;
   border:none;
 }
