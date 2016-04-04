@@ -112,7 +112,7 @@ div.iphone-mockup{
 
 section.features{
   background-color:#369;
-  padding:30px;
+  padding:5px;
   color:#fff;
 }
 
@@ -133,6 +133,41 @@ section.features{
 .features .icon-features{
   margin-top:15px;
 }
+
+
+.icon-pitch{
+  text-align:center;
+}
+
+.icon-pitch .glyphicon{
+  font-size:60px;
+}
+
+section.pitch{
+  background-color:#FFF;
+  padding:5px 5px;
+  color:#369;
+}
+
+.pitch h2{
+  color:#368;
+  letter-spacing: 5px;
+  font-weight:300;
+  text-transform: uppercase;
+}
+
+.pitch p{
+  color:#368;
+  font-weight:200;
+  letter-spacing:2px;
+  font-size:14px;    
+}
+
+.pitch .icon-pitch{
+  margin-top:15px;
+}
+
+
 
 .testimonials blockquote{
   text-align:center;
