@@ -10,28 +10,32 @@
 
 
 <% if current_user %>
-
 <li class="col-md-8 user-name">
 
-<%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile' %>
+    <%= link_to 'Add members'.html_safe, new_member_path, class: 'navbar-link btn-secondary' %>
 
-</li>
+                    </li>
+                    <li class="col-md-8 user-name">
 
-<li class="col-md-1"> </li>
+                        <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile' %>
 
-<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+                    </li>
+
+                    <li class="col-md-1"> </li>
+
+                    <li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
 
 <% else %>
 
-<li class="col-md-12 pull-right" stlye="display:inline-box;">
-    <p> <%= link_to('Sign Up', new_user_registration_path, class: 'btn btn-primary', title: 'Sign Up') %>&nbsp;<%= link_to('Sign In', new_user_session_path, class: 'btn btn-success', title: 'Sign In') %>
-    </p>
+                    <li class="col-md-12 pull-right" stlye="display:inline-box;">
+        <p> <%= link_to('Sign Up', new_user_registration_path, class: 'navbar-link btn btn-primary', title: 'Sign Up') %>&nbsp;<%= link_to('Sign In', new_user_session_path, class: 'navbar-link btn btn-success', title: 'Sign In') %>
+        </p>
     
     
 
 
 
-</li>
+                    </li>
 
 <% end %>
 
