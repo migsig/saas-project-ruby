@@ -10,14 +10,19 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-3 get-it">
+                    <% if current_user %>
+
+                    <h1>Welcome </h1>
+                    <h2>Organization: <%= @tenant.name %></h2>
+                    <% else %>
                     <h1>Digital Design Solutions</h1>
                     
                     <div class="iphone-mockup">
                         <div class="screen"></div>
                     </div>
-                    <p>Welcome to our
-                    project management system.</p>
-                    <p><a class="btn btn-primary btn-lg" role="button" href="#"><i class="fa fa-apple"></i> Sign Up Now!</a><a class="btn btn-success btn-lg" role="button" href="#"><i class="fa fa-google"></i> Premium Services</a></p>
+                    <p>You'll love managing your project with our SaaS application. Please take a look at our great plans</p>
+                    <p><%= link_to 'Free Sign Up', new_user_registration_path(plan: 'free'), class: 'btn btn-primary btn-lg sign-up' %><%= link_to 'Premium Services', new_user_registration_path(plan: 'premium'), class: 'btn btn-success btn-lg sign-up' %></p>
+                    <% end %>
                 </div>
             </div>
       
