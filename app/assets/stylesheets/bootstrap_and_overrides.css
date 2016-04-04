@@ -61,4 +61,5 @@ body {
 .jumbotron{
  padding-top:20px !important;
     padding-bottom: 20px !important;
+    margin-bottom:0 !important;
 }
