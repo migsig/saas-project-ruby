@@ -1,4 +1,5 @@
 class ConfirmationsController < Milia::ConfirmationsController
+  
   def update
     if @confirmable.attempt_set_password(user_params)
 
@@ -32,6 +33,7 @@ class ConfirmationsController < Milia::ConfirmationsController
        @confirmable.skip_confirm_change_password
 
       log_action( "devise pass-thru" )
+      
       self.resource = resource_class.confirm_by_token(params[:confirmable_token])
       yield resource if block_given?
       
@@ -50,18 +52,16 @@ class ConfirmationsController < Milia::ConfirmationsController
     # upon SUBMIT, processing will continue from update
   end    
 
-    def after_confirmation_path_for(resource_name, resource)
-      if  user_signed_in?
+  def after_confirmation_path_for(resource_name, resource)
+    if  user_signed_in?
         root_path
-      else
+    else
         new_user_session_path
-      end
+    end
   end
 
   private
-
     def set_confirmable()
       @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
-
-  end
+    end
 end
