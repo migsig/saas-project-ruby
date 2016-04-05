@@ -34,18 +34,19 @@ class ConfirmationsController < Milia::ConfirmationsController
 
       log_action( "devise pass-thru" )
       
-      self.resource = resource_class.confirm_by_token(params[:confirmable_token])
+      self.resource = resource_class.confirm_by_token(params[:confirmation_token])
       yield resource if block_given?
       
       if resource.errors.empty?
             set_flash_message(:notice, :confirmed) if is_flashing_formats?
       end
+        
       if @confirmable.skip_confirm_change_password
         sign_in_tenanted(resource)
       end
     else
       log_action( "password set form" )
-        flash[:notice] = "Please choose a password and confirm it"
+      flash[:notice] = "Please choose a password and confirm it"
       prep_do_show()  # prep for the form
     end
     # else fall thru to show template which is form to set a password
@@ -61,7 +62,7 @@ class ConfirmationsController < Milia::ConfirmationsController
   end
 
   private
-    def set_confirmable()
-      @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
-    end
+  def set_confirmable()
+    @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
+  end
 end
